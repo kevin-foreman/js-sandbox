@@ -1,13 +1,22 @@
 function assertObjectsEqual(actual, expected, testName) {
     // your code here
-}
+    actual = JSON.stringify(actual);
+    expected = JSON.stringify(expected)
+
+    if (actual === expected) {
+        console.log('passed')
+    } else {
+        console.log('FAILED [' + testName + '] Expected ' + expected + ', but got ' + actual);
+    };
+};
+
 
 // Success case
 var person = {
     firstName: 'Cassidy',
     lastName: 'Jacobs'
 };
-updateObject(person, 'firstName', 'Jack');
+// updateObject(person, 'firstName', 'Jack');
 
 var expected = {
     firstName: 'Jack',
@@ -23,7 +32,7 @@ var person = {
     firstName: 'Joe',
     lastName: 'Blow'
 };
-updateObject(person, 'age', 35);
+// updateObject(person, 'age', 35);
 
 var expected = {
     firstName: 'Joe',
